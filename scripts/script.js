@@ -1,4 +1,8 @@
+let chances;
+
 function shapeChosen(shape){
+    $('#firstTrapeziumForm').hide('3000');
+    $('#area_trapezium').hide('3000');
     $('#triparallel').show('3000');
     $('#shape').val(shape);
     $('#chosenShape span').html(shape.toUpperCase());
@@ -6,6 +10,18 @@ function shapeChosen(shape){
 
 function showAreaTriParallelForm(){
     $('#area_tri_parallel').show('3000');
+    chances = 3;
+}
+
+function showFirstTrapeziumForm(){
+    $('#triparallel').hide('3000');
+    $('#area_tri_parallel').hide('3000');
+    $('#firstTrapeziumForm').show('3000');
+    chances = 3;
+}
+
+function showAreaTrapeziumForm(){
+    $('#area_trapezium').show('3000');
 }
 
 function areaCalcTriParallel(){
@@ -18,11 +34,11 @@ function areaCalcTriParallel(){
 
     if(shape == "triangle") {
         let areaTriangle = areaCalc / 2;
-        $('#chosenShape').html(areaTriangle);
+        $('#chosenShape').html(chances);
         answerCheck(givenAnswer, areaTriangle);
     }
     else{
-        $('#chosenShape').html(areaCalc);
+        $('#chosenShape').html(chances);
         answerCheck(givenAnswer, areaCalc);
     }
 }

@@ -10,7 +10,7 @@
     text-align: center;
 }
 
-form#triparallel, form#area_tri_parallel{
+form#triparallel, form#area_tri_parallel, form#firstTrapeziumForm, form#area_trapezium{
     display: none;
 }
 

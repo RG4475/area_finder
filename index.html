@@ -40,7 +40,7 @@
                     <polygon points="450,0 800,0 620,200 300,200" id="parallelogram" onclick="shapeChosen(this.id)"></polygon>
                 
                     <!--TRAPEZIUM-->
-                    <polygon points="1000,0 1150,0 1400,200 800,200" id="trapezium"></polygon>
+                    <polygon points="1000,0 1150,0 1400,200 800,200" id="trapezium" onclick="showFirstTrapeziumForm()"></polygon>
                 </svg>
             </section>
             <section>
@@ -63,8 +63,8 @@
                     </label><br><br>
                     <input type="button" value="SUBMIT" onclick="areaCalcTriParallel()">
                 </form>
-                <!--
-                <form id="trapezium">
+
+                <form id="firstTrapeziumForm">
                     <label for="topbase">Top base (A)(cm):
                         <input id="topbase" name="topbase" type="number" min="1">
                     </label><br><br>
@@ -74,17 +74,17 @@
                     <label for="height">Height (cm):
                         <input id="height" name="height" type="number" min="1">
                     </label><br><br>
-                    <input type="button" value="ENTER">
+                    <input type="button" value="ENTER" onclick="showAreaTrapeziumForm()">
                 </form>
 
-                <h3>SO WHAT IS THE AREA OF THIS TRAPEZIUM</h3>
+
                 <form id="area_trapezium">
+                    <h3>SO WHAT IS THE AREA OF THIS TRAPEZIUM</h3>
                     <label for="areaCalc2">Area (cm):
                         <input id="areaCalc2" name="areaCalc2" type="number" min="1">
                     </label><br><br>
                     <input type="button" value="SUBMIT">
                 </form>
-                -->
             </section>
         </div>
     </main>
