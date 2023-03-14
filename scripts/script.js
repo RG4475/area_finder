@@ -17,11 +17,11 @@ function showFirstTrapeziumForm(){
     $('#triparallel').hide('3000');
     $('#area_tri_parallel').hide('3000');
     $('#firstTrapeziumForm').show('3000');
-    chances = 3;
 }
 
 function showAreaTrapeziumForm(){
     $('#area_trapezium').show('3000');
+    chances = 3;
 }
 
 function areaCalcTriParallel(){
@@ -41,6 +41,20 @@ function areaCalcTriParallel(){
         $('#chosenShape').html(chances);
         answerCheck(givenAnswer, areaCalc);
     }
+}
+
+function areaCalcTrapezium(){
+    let topBase = parseInt($('#topbase').val());
+    let bottomBase = parseInt($('#bottombase').val());
+    let height = parseInt($('#heightTrapezium').val());
+
+    let givenAnswer = parseInt($('#areaCalc2').val());
+    let basesCalc = (topBase + bottomBase) / 2;
+    let areaCalc = basesCalc * height;
+
+    answerCheck(givenAnswer, areaCalc);
+
+    $('#forTrapezium').html(areaCalc);
 }
 
 function answerCheck(given, correct){

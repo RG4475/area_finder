@@ -71,19 +71,19 @@
                     <label for="bottombase">Bottom base (B)(cm):
                         <input id="bottombase" name="bottombase" type="number" min="1">
                     </label><br><br>
-                    <label for="height">Height (cm):
-                        <input id="height" name="height" type="number" min="1">
+                    <label for="heightTrapezium">Height (cm):
+                        <input id="heightTrapezium" name="heightTrapezium" type="number" min="1">
                     </label><br><br>
                     <input type="button" value="ENTER" onclick="showAreaTrapeziumForm()">
                 </form>
 
 
                 <form id="area_trapezium">
-                    <h3>SO WHAT IS THE AREA OF THIS TRAPEZIUM</h3>
+                    <h3 id="forTrapezium">SO WHAT IS THE AREA OF THIS TRAPEZIUM</h3>
                     <label for="areaCalc2">Area (cm):
                         <input id="areaCalc2" name="areaCalc2" type="number" min="1">
                     </label><br><br>
-                    <input type="button" value="SUBMIT">
+                    <input type="button" value="SUBMIT" onclick="areaCalcTrapezium()">
                 </form>
             </section>
         </div>
