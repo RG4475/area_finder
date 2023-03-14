@@ -28,14 +28,64 @@
             </svg>
         </div>
         <br><br><br><br><br><br><br><br><br>
-        <h2>The area of these shapes can also be calculated, each have different ways over how its area is calculated.</h2>
+        <h2>The area of these shapes can also be calculated, each have different ways over how its area is calculated.<br>
+        <h2>COULD YOU GUESS HOW TO CALCULATE THE AREA OF THESE SHAPES</h2>
         <div id="shapes">
-            <svg width="3000px" height="3000px">
-                <!--TRIANGLE-->
-                <polygon points="120,0 0,200 250,200"></polygon>
-                <!--PARALLELOGRAM-->
-                <polygon points="450,0 800,0 620,200 300,200"></polygon>
-            </svg>
+            <section>
+                <svg width="1500px" height="300px">
+                    <!--TRIANGLE-->
+                    <polygon points="120,0 0,200 250,200" id="triangle" onclick="shapeChosen(this.id)"></polygon>
+
+                    <!--PARALLELOGRAM-->
+                    <polygon points="450,0 800,0 620,200 300,200" id="parallelogram" onclick="shapeChosen(this.id)"></polygon>
+                
+                    <!--TRAPEZIUM-->
+                    <polygon points="1000,0 1150,0 1400,200 800,200" id="trapezium"></polygon>
+                </svg>
+            </section>
+            <section>
+                <form id="triparallel">
+                    <label for="base">Base (cm):
+                        <input id="base" name="base" type="number" min="1">
+                    </label><br><br>
+                    <label for="height">Height (cm):
+                        <input id="height" name="height" type="number" min="1">
+                    </label><br><br>
+                    <input type="button" value="ENTER" onclick="showAreaTriParallelForm()">
+                </form>
+                
+                
+                <form id="area_tri_parallel">
+                    <h3 id="chosenShape">SO WHAT IS THE AREA OF THIS <span></span></h3>
+                    <input type="hidden" id="shape" name="shape" value="">
+                    <label for="areaCalc1">Area (cm):
+                        <input id="areaCalc1" name="areaCalc1" type="number" min="1" step="1">
+                    </label><br><br>
+                    <input type="button" value="SUBMIT" onclick="areaCalcTriParallel()">
+                </form>
+                <!--
+                <form id="trapezium">
+                    <label for="topbase">Top base (A)(cm):
+                        <input id="topbase" name="topbase" type="number" min="1">
+                    </label><br><br>
+                    <label for="bottombase">Bottom base (B)(cm):
+                        <input id="bottombase" name="bottombase" type="number" min="1">
+                    </label><br><br>
+                    <label for="height">Height (cm):
+                        <input id="height" name="height" type="number" min="1">
+                    </label><br><br>
+                    <input type="button" value="ENTER">
+                </form>
+
+                <h3>SO WHAT IS THE AREA OF THIS TRAPEZIUM</h3>
+                <form id="area_trapezium">
+                    <label for="areaCalc2">Area (cm):
+                        <input id="areaCalc2" name="areaCalc2" type="number" min="1">
+                    </label><br><br>
+                    <input type="button" value="SUBMIT">
+                </form>
+                -->
+            </section>
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" crossorigin="anonymous"></script>
