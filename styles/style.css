@@ -10,7 +10,7 @@
     text-align: center;
 }
 
-form#triparallel, form#area_tri_parallel, form#firstTrapeziumForm, form#area_trapezium{
+form#triparallel, form#area_tri_parallel, form#firstTrapeziumForm, form#area_trapezium, form#calc_choice, form#radius_input{
     display: none;
 }
 
@@ -24,4 +24,8 @@ svg{
     fill: red;
     stroke-width: 1px;
     stroke:black;
+}
+
+#circleDesc span{
+    font-weight: normal;
 }

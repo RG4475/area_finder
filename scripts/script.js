@@ -1,16 +1,18 @@
 let chances;
 
+$('#circleDesc span').html(Math.PI);
+
 function shapeChosen(shape){
     $('#firstTrapeziumForm').hide('3000');
     $('#area_trapezium').hide('3000');
     $('#triparallel').show('3000');
     $('#shape').val(shape);
     $('#chosenShape span').html(shape.toUpperCase());
+    chances = 3;
 }
 
 function showAreaTriParallelForm(){
     $('#area_tri_parallel').show('3000');
-    chances = 3;
 }
 
 function showFirstTrapeziumForm(){
@@ -22,6 +24,20 @@ function showFirstTrapeziumForm(){
 function showAreaTrapeziumForm(){
     $('#area_trapezium').show('3000');
     chances = 3;
+}
+
+function showCircleCalcChoice(){
+    $('#calc_choice').show('3000');
+}
+
+function showRadiusInputForm(){
+    let chosenCalcChoice = $("input[name='choice']:checked").val();
+    $('#calculation').val(chosenCalcChoice);
+    $('#radius_input').show('3000');
+}
+
+function showChosenChoice(){
+    
 }
 
 function areaCalcTriParallel(){

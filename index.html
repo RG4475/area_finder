@@ -29,7 +29,7 @@
         </div>
         <br><br><br><br><br><br><br><br><br>
         <h2>The area of these shapes can also be calculated, each have different ways over how its area is calculated.<br>
-        <h2>COULD YOU GUESS HOW TO CALCULATE THE AREA OF THESE SHAPES</h2>
+        <h2>DO YOU KNOW HOW TO CALCULATE THE AREA OF THESE SHAPES</h2>
         <div id="shapes">
             <section>
                 <svg width="1500px" height="300px">
@@ -77,13 +77,52 @@
                     <input type="button" value="ENTER" onclick="showAreaTrapeziumForm()">
                 </form>
 
-
                 <form id="area_trapezium">
                     <h3 id="forTrapezium">SO WHAT IS THE AREA OF THIS TRAPEZIUM</h3>
                     <label for="areaCalc2">Area (cm):
                         <input id="areaCalc2" name="areaCalc2" type="number" min="1">
                     </label><br><br>
                     <input type="button" value="SUBMIT" onclick="areaCalcTrapezium()">
+                </form>
+            </section>
+        </div>
+        <div id="circleSection">
+            <h2>CIRCLE</h2>
+            <h2 id="circleDesc">With the use of Pi (<span></span>) You can calculate more than just the area of a circle. You can also calculate its Diameter and Circumference</h2>
+            <h2>DO YOU KNOW HOW TO CALCULATE THE AREA/CIRCUMFERENCE/DIAMETER OF A CIRCLE?</h2>
+
+            <svg width="200px" height="200px">
+                <circle cx="100" cy="100" r="100" onclick="showCircleCalcChoice()"></circle>
+            </svg>
+
+            <section>
+                <form id="calc_choice">
+                    <h3>What do you want to calculate in this circle?</h3>
+                    <input id="area" name="choice" type="radio" value="area">
+                    <label for="area">Area</label><br>
+                    <input id="circumference" name="choice" type="radio" value="circumference">
+                    <label for="circumference">Circumference</label><br>
+                    <input id="diameter" name="choice" type="radio" value="diameter">
+                    <label for="diameter">Diameter</label><br><br>
+                    <input type="button" value="SELECT" onclick="showRadiusInputForm()">
+                </form>
+
+                <form id="radius_input">
+                    <input type="hidden" id="calculation" name="calculation" value="">
+                    <label for="radius">Radius (cm)
+                    <input id="radius" name="radius" type="number" min="1">
+                    </label>
+                    <input type="button" value="ENTER">
+                </form>
+
+                <form id="area_circle">
+                    <h3 id="chosenCalc">SO WHAT IS THE <span></span> OF THIS CIRCLE</h3>
+                </form>
+                <form id="circum_circle">
+                    <h3 id="chosenCalc">SO WHAT IS THE <span></span> OF THIS CIRCLE</h3>
+                </form>
+                <form id="diameter_circle">
+                    <h3 id="chosenCalc">SO WHAT IS THE <span></span> OF THIS CIRCLE</h3>
                 </form>
             </section>
         </div>
