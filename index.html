@@ -97,7 +97,7 @@
 
             <section>
                 <form id="calc_choice">
-                    <h3>What do you want to calculate in this circle?</h3>
+                    <h3>What do you want to calculate in your circle?</h3>
                     <input id="area" name="choice" type="radio" value="area">
                     <label for="area">Area</label><br>
                     <input id="circumference" name="choice" type="radio" value="circumference">
@@ -108,21 +108,37 @@
                 </form>
 
                 <form id="radius_input">
+                    <h3>Please enter the radius of your circle</h3>
                     <input type="hidden" id="calculation" name="calculation" value="">
                     <label for="radius">Radius (cm)
-                    <input id="radius" name="radius" type="number" min="1">
+                        <input id="radius" name="radius" type="number" min="1">
                     </label>
-                    <input type="button" value="ENTER">
+                    <input type="button" value="ENTER" onclick="showChosenChoice()">
                 </form>
 
                 <form id="area_circle">
-                    <h3 id="chosenCalc">SO WHAT IS THE <span></span> OF THIS CIRCLE</h3>
+                    <h3>SO WHAT IS THE AREA OF THIS CIRCLE</h3>
+                    <p>If you want, you can round your answer to the nearest whole number</p>
+                    <label for="areaCalc3">Area (cm)
+                        <input id="areaCalc3" name="areaCalc3" type="number" min="1">
+                    </label>
+                    <input type="button" value="SUBMIT">
                 </form>
                 <form id="circum_circle">
-                    <h3 id="chosenCalc">SO WHAT IS THE <span></span> OF THIS CIRCLE</h3>
+                    <h3>SO WHAT IS THE CIRCUMFERENCE OF THIS CIRCLE</h3>
+                    <p>If you want, you can round your answer to the nearest whole number</p>
+                    <label for="circumCalc">Circumference (cm)
+                        <input id="circumCalc" name="circumCalc" type="number" min="1">
+                    </label>
+                    <input type="button" value="SUBMIT">
                 </form>
                 <form id="diameter_circle">
-                    <h3 id="chosenCalc">SO WHAT IS THE <span></span> OF THIS CIRCLE</h3>
+                    <h3>SO WHAT IS THE DIAMETER OF THIS CIRCLE</h3>
+                    <p>If you want, you can round your answer to the nearest whole number</p>
+                    <label for="diameterCalc">Diameter (cm)
+                        <input id="diameterCalc" name="diameterCalc" type="number" min="1">
+                    </label>
+                    <input type="button" value="SUBMIT">
                 </form>
             </section>
         </div>

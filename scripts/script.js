@@ -1,6 +1,7 @@
 let chances;
+const valuePi = Math.PI;
 
-$('#circleDesc span').html(Math.PI);
+$('#circleDesc span').html(valuePi);
 
 function shapeChosen(shape){
     $('#firstTrapeziumForm').hide('3000');
@@ -31,13 +32,31 @@ function showCircleCalcChoice(){
 }
 
 function showRadiusInputForm(){
+    $('#area_circle').hide('3000');
+    $('#circum_circle').hide('3000');
+    $('#diameter_circle').hide('3000');
+    
     let chosenCalcChoice = $("input[name='choice']:checked").val();
     $('#calculation').val(chosenCalcChoice);
     $('#radius_input').show('3000');
 }
 
 function showChosenChoice(){
-    
+    let pickUpChoice = $('#calculation').val();
+
+    switch(pickUpChoice){
+
+        case "area":
+            $('#area_circle').show('3000');
+            break;
+
+        case "circumference":
+            $('#circum_circle').show('3000');
+            break;
+
+        default:
+            $('#diameter_circle').show('3000');
+    }
 }
 
 function areaCalcTriParallel(){
