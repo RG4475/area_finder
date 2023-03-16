@@ -4,10 +4,12 @@ const valuePi = Math.PI;
 $('#circleDesc span').html(valuePi);
 
 function shapeChosen(shape){
+    $('#area_tri_parallel').hide('3000');
     $('#firstTrapeziumForm').hide('3000');
     $('#area_trapezium').hide('3000');
     $('#triparallel').show('3000');
     $('#shape').val(shape);
+    $('#selectShape').html(shape.toUpperCase());
     $('#chosenShape span').html(shape.toUpperCase());
     chances = 3;
 }
@@ -18,10 +20,12 @@ function showAreaTriParallelForm(){
     let shape = $('#shape').val();
 
     if(!base || !height){
-        $('#area_tri_parallel').hide();
         alert("Please enter the base and height of your " + shape);
     }
     else{
+        $('#triparallel').hide('3000');
+        $('#baseChosen span').html(base);
+        $('#heightChosen span').html(height);
         $('#area_tri_parallel').show('3000');
     }
 }
@@ -29,6 +33,7 @@ function showAreaTriParallelForm(){
 function showFirstTrapeziumForm(){
     $('#triparallel').hide('3000');
     $('#area_tri_parallel').hide('3000');
+    $('#area_trapezium').hide('3000');
     $('#firstTrapeziumForm').show('3000');
 }
 
@@ -38,16 +43,23 @@ function showAreaTrapeziumForm(){
     let height = parseInt($('#heightTrapezium').val());
     
     if(!topBase || !bottomBase || !height){
-        $('#area_trapezium').hide();
         alert("Please enter the top base (A), bottom base (B) and the height of your Trapezium");
     }
     else{
+        $('#topBaseChosen span').html(topBase);
+        $('#bottomBaseChosen span').html(bottomBase);
+        $('#trapHeightChosen span').html(height);
+        $('#firstTrapeziumForm').hide('3000');
         $('#area_trapezium').show('3000');
         chances = 3;
     }
 }
 
 function showCircleCalcChoice(){
+    $('#area_circle').hide('3000');
+    $('#circum_circle').hide('3000');
+    $('#diameter_circle').hide('3000');
+    $('#radius_input').hide('3000');
     $('#calc_choice').show('3000');
 }
 
@@ -69,6 +81,12 @@ function showRadiusInputForm(){
 
 function showChosenChoice(){
     let pickUpChoice = $('#calculation').val();
+
+    let radius = parseInt($('#radius').val());
+
+    $('#calc_choice').hide('3000');
+    $('#radius_input').hide('3000');
+    $('.radiusChosen span').html(radius);
 
     switch(pickUpChoice){
 

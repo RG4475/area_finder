@@ -45,6 +45,7 @@
             </section>
             <section>
                 <form id="triparallel">
+                    <h3 id="selectShape"></h3>
                     <label for="base">Base (cm):
                         <input id="base" name="base" type="number" min="1">
                     </label><br><br>
@@ -57,6 +58,8 @@
                 
                 <form id="area_tri_parallel">
                     <h3 id="chosenShape">SO WHAT IS THE AREA OF YOUR <span></span></h3>
+                    <p id="baseChosen"><b>Base: </b><span></span>cm</p>
+                    <p id="heightChosen"><b>Height: </b><span></span>cm</p>
                     <input type="hidden" id="shape" name="shape" value="">
                     <label for="areaCalc1">Area (cm):
                         <input id="areaCalc1" name="areaCalc1" type="number" min="1" step="1">
@@ -65,6 +68,7 @@
                 </form>
 
                 <form id="firstTrapeziumForm">
+                    <h3 id="trapeziumInfo">TRAPEZIUM</h3>
                     <label for="topbase">Top base (A)(cm):
                         <input id="topbase" name="topbase" type="number" min="1">
                     </label><br><br>
@@ -79,6 +83,9 @@
 
                 <form id="area_trapezium">
                     <h3 id="forTrapezium">SO WHAT IS THE AREA OF THIS TRAPEZIUM</h3>
+                    <p id="topBaseChosen"><b>Top Base (A) </b><span></span>cm</p>
+                    <p id="bottomBaseChosen"><b>Bottom Base (B) </b><span></span>cm</p>
+                    <p id="trapHeightChosen"><b>Height </b><span></span>cm</p>
                     <label for="areaCalc2">Area (cm):
                         <input id="areaCalc2" name="areaCalc2" type="number" min="1">
                     </label><br><br>
@@ -119,6 +126,7 @@
                 <form id="area_circle">
                     <h3>SO WHAT IS THE AREA OF THIS CIRCLE</h3>
                     <p>If you want, you can round your answer to the nearest whole number</p>
+                    <p class="radiusChosen"><b>Radius: </b><span></span>cm</p>
                     <label for="areaCalc3">Area (cm)
                         <input id="areaCalc3" name="areaCalc3" type="number" min="1">
                     </label>
@@ -127,6 +135,7 @@
                 <form id="circum_circle">
                     <h3>SO WHAT IS THE CIRCUMFERENCE OF THIS CIRCLE</h3>
                     <p>If you want, you can round your answer to the nearest whole number</p>
+                    <p class="radiusChosen"><b>Radius: </b><span></span>cm</p>
                     <label for="circumCalc">Circumference (cm)
                         <input id="circumCalc" name="circumCalc" type="number" min="1">
                     </label>
@@ -135,6 +144,7 @@
                 <form id="diameter_circle">
                     <h3>SO WHAT IS THE DIAMETER OF THIS CIRCLE</h3>
                     <p>If you want, you can round your answer to the nearest whole number</p>
+                    <p class="radiusChosen"><b>Radius: </b><span></span>cm</p>
                     <label for="diameterCalc">Diameter (cm)
                         <input id="diameterCalc" name="diameterCalc" type="number" min="1">
                     </label>
