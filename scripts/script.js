@@ -13,7 +13,17 @@ function shapeChosen(shape){
 }
 
 function showAreaTriParallelForm(){
-    $('#area_tri_parallel').show('3000');
+    let base = parseInt($('#base').val());
+    let height = parseInt($('#height').val());
+    let shape = $('#shape').val();
+
+    if(!base || !height){
+        $('#area_tri_parallel').hide();
+        alert("Please enter the base and height of your " + shape);
+    }
+    else{
+        $('#area_tri_parallel').show('3000');
+    }
 }
 
 function showFirstTrapeziumForm(){
@@ -23,8 +33,18 @@ function showFirstTrapeziumForm(){
 }
 
 function showAreaTrapeziumForm(){
-    $('#area_trapezium').show('3000');
-    chances = 3;
+    let topBase = parseInt($('#topbase').val());
+    let bottomBase = parseInt($('#bottombase').val());
+    let height = parseInt($('#heightTrapezium').val());
+    
+    if(!topBase || !bottomBase || !height){
+        $('#area_trapezium').hide();
+        alert("Please enter the top base (A), bottom base (B) and the height of your Trapezium");
+    }
+    else{
+        $('#area_trapezium').show('3000');
+        chances = 3;
+    }
 }
 
 function showCircleCalcChoice(){
@@ -35,10 +55,16 @@ function showRadiusInputForm(){
     $('#area_circle').hide('3000');
     $('#circum_circle').hide('3000');
     $('#diameter_circle').hide('3000');
-    
+
     let chosenCalcChoice = $("input[name='choice']:checked").val();
-    $('#calculation').val(chosenCalcChoice);
-    $('#radius_input').show('3000');
+
+    if(!chosenCalcChoice){
+        alert("Please select what you want to calculate with your circle");
+    }
+    else{
+        $('#calculation').val(chosenCalcChoice);
+        $('#radius_input').show('3000');
+    }
 }
 
 function showChosenChoice(){
@@ -90,6 +116,38 @@ function areaCalcTrapezium(){
     answerCheck(givenAnswer, areaCalc);
 
     $('#forTrapezium').html(areaCalc);
+}
+
+function areaCalcCircle(){
+    let radius = parseInt($('#radius').val());
+
+    let givenAnswer = Math.round($('#areaCalc3').val());
+    let areaCalc = Math.round(valuePi * radius**2);
+
+    answerCheck(givenAnswer, areaCalc);
+    $('#area_circle h3').html(areaCalc);
+}
+
+function circumferenceCalc(){
+    let radius = parseInt($('#radius').val());
+
+    let givenAnswer = Math.round($('#circumCalc').val());
+    let circumCalc = Math.round(2 * valuePi * radius);
+
+    answerCheck(givenAnswer, circumCalc);
+
+    $('#circum_circle h3').html(circumCalc);
+}
+
+function diameterCalculation(){
+    let radius = parseInt($('#radius').val());
+
+    let givenAnswer = parseInt($('#diameterCalc').val());
+    let diameter = radius * 2;
+
+    answerCheck(givenAnswer, diameter);
+
+    $('#diameter_circle h3').html(diameter);
 }
 
 function answerCheck(given, correct){

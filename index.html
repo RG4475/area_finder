@@ -56,7 +56,7 @@
                 
                 
                 <form id="area_tri_parallel">
-                    <h3 id="chosenShape">SO WHAT IS THE AREA OF THIS <span></span></h3>
+                    <h3 id="chosenShape">SO WHAT IS THE AREA OF YOUR <span></span></h3>
                     <input type="hidden" id="shape" name="shape" value="">
                     <label for="areaCalc1">Area (cm):
                         <input id="areaCalc1" name="areaCalc1" type="number" min="1" step="1">
@@ -122,7 +122,7 @@
                     <label for="areaCalc3">Area (cm)
                         <input id="areaCalc3" name="areaCalc3" type="number" min="1">
                     </label>
-                    <input type="button" value="SUBMIT">
+                    <input type="button" value="SUBMIT" onclick="areaCalcCircle()">
                 </form>
                 <form id="circum_circle">
                     <h3>SO WHAT IS THE CIRCUMFERENCE OF THIS CIRCLE</h3>
@@ -130,7 +130,7 @@
                     <label for="circumCalc">Circumference (cm)
                         <input id="circumCalc" name="circumCalc" type="number" min="1">
                     </label>
-                    <input type="button" value="SUBMIT">
+                    <input type="button" value="SUBMIT" onclick="circumferenceCalc()">
                 </form>
                 <form id="diameter_circle">
                     <h3>SO WHAT IS THE DIAMETER OF THIS CIRCLE</h3>
@@ -138,7 +138,7 @@
                     <label for="diameterCalc">Diameter (cm)
                         <input id="diameterCalc" name="diameterCalc" type="number" min="1">
                     </label>
-                    <input type="button" value="SUBMIT">
+                    <input type="button" value="SUBMIT" onclick="diameterCalculation()">
                 </form>
             </section>
         </div>
