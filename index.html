@@ -13,24 +13,32 @@
 </head>
 <body>
     <main>
-        <h1>WHAT'S THE AREA?</h1>
-        <h2>The area is everything that is inside the shape. Lets look at this rectangle for example.</h2>
-        <div id="example">
-            <aside>
-                <p>Rectangle not accurately drawn</p>
-                <p><b>Base:</b> 10cm<br>
-                <b>Height:</b> 6cm</b></p>
-                <p><b>With these measurements, the area of this rectangle would be</b></p>
-                <h3>10 * 6 = 60cm</h3>
-            </aside>
-            <svg width="350px" height="175px">
-                <rect width="350px" height="175px" title="Rectangle"></rect>
-            </svg>
-        </div>
+        <header>
+            <h1>WHAT'S THE AREA?</h1>
+        </header>
+        
+        <!--Meaning of area and an example of how to calculate the area of a rectangle-->
+        <section>
+            <h2>The area is everything that is inside the shape. Lets look at this rectangle for example.</h2>
+            <div id="example">
+                <aside>
+                    <p>Rectangle not accurately drawn</p>
+                    <p><b>Base:</b> 10cm<br>
+                    <b>Height:</b> 6cm</b></p>
+                    <p><b>With these measurements, the area of this rectangle would be</b></p>
+                    <h3>10 * 6 = 60cm</h3>
+                </aside>
+                <svg width="350px" height="175px">
+                    <rect width="350px" height="175px" title="Rectangle"></rect>
+                </svg>
+            </div>
+        </section>
         <br><br><br><br><br><br><br><br><br>
         <h2>The area of these shapes can also be calculated, each have different ways over how its area is calculated.<br>
         <h2>DO YOU KNOW HOW TO CALCULATE THE AREA OF THESE SHAPES</h2>
+
         <div id="shapes">
+            <!--SVG Polygons of three of the four different shapes where the area can be calculated from-->
             <section>
                 <svg width="1500px" height="300px">
                     <!--TRIANGLE-->
@@ -43,7 +51,11 @@
                     <polygon points="1000,0 1150,0 1400,200 800,200" id="trapezium" onclick="showFirstTrapeziumForm()"></polygon>
                 </svg>
             </section>
+
+            <!--All area calculation forms for the three SVG polygons above-->
             <section>
+
+                <!--Form for the user to add the base and height of their Triangle or Parallelogram depending on what shape the user selected-->
                 <form id="triparallel">
                     <h3 id="selectShape"></h3>
                     <label for="base">Base (cm):
@@ -55,7 +67,8 @@
                     <input type="button" value="ENTER" onclick="showAreaTriParallelForm()">
                 </form>
                 
-                
+                <!--Form for the user to enter their guess for what they think the area of their Triangle or Parallelogram is
+                based upon the base and height sizes they gave from the previous form-->
                 <form id="area_tri_parallel">
                     <h3 id="chosenShape">SO WHAT IS THE AREA OF YOUR <span></span></h3>
                     <p id="baseChosen"><b>Base: </b><span></span>cm</p>
@@ -67,6 +80,7 @@
                     <input type="button" value="SUBMIT" onclick="areaCalcTriParallel()">
                 </form>
 
+                <!--Form for the user to add base A, base B and the height of their Trapezium-->
                 <form id="firstTrapeziumForm">
                     <h3 id="trapeziumInfo">TRAPEZIUM</h3>
                     <label for="topbase">Top base (A)(cm):
@@ -81,6 +95,8 @@
                     <input type="button" value="ENTER" onclick="showAreaTrapeziumForm()">
                 </form>
 
+                <!--Form for the user to enter their guess for what they think the area of their Trapezium is
+                based upon the sizes they gave for both bases and the height from the previous form-->
                 <form id="area_trapezium">
                     <h3 id="forTrapezium">SO WHAT IS THE AREA OF THIS TRAPEZIUM</h3>
                     <p id="topBaseChosen"><b>Top Base (A) </b><span></span>cm</p>
@@ -93,16 +109,23 @@
                 </form>
             </section>
         </div>
+
+        <!--SVG circle alongside mentioning the different things that can be calculated on a circle with the value of Pi-->
         <div id="circleSection">
-            <h2>CIRCLE</h2>
-            <h2 id="circleDesc">With the use of Pi (<span></span>) You can calculate more than just the area of a circle. You can also calculate its Diameter and Circumference</h2>
-            <h2>DO YOU KNOW HOW TO CALCULATE THE AREA/CIRCUMFERENCE/DIAMETER OF A CIRCLE?</h2>
-
-            <svg width="200px" height="200px">
-                <circle cx="100" cy="100" r="100" onclick="showCircleCalcChoice()"></circle>
-            </svg>
-
             <section>
+                <h2>CIRCLE</h2>
+                <h2 id="circleDesc">With the use of Pi (<span></span>) You can calculate more than just the area of a circle. You can also calculate its Diameter and Circumference</h2>
+                <h2>DO YOU KNOW HOW TO CALCULATE THE AREA/CIRCUMFERENCE/DIAMETER OF A CIRCLE?</h2>
+
+                <svg width="200px" height="200px">
+                    <circle cx="100" cy="100" r="100" onclick="showCircleCalcChoice()"></circle>
+                </svg>
+            </section>
+            
+            <!--All the forms showing the different things that can be calculated on a circle with the value of Pi-->
+            <section>
+
+                <!--Form where the user can select what they want to calculate from their circle-->
                 <form id="calc_choice">
                     <h3>What do you want to calculate in your circle?</h3>
                     <input id="area" name="choice" type="radio" value="area">
@@ -114,6 +137,7 @@
                     <input type="button" value="SELECT" onclick="showRadiusInputForm()">
                 </form>
 
+                <!--Form for the user to enter the radius of their circle-->
                 <form id="radius_input">
                     <h3>Please enter the radius of your circle</h3>
                     <input type="hidden" id="calculation" name="calculation" value="">
@@ -123,6 +147,12 @@
                     <input type="button" value="ENTER" onclick="showChosenChoice()">
                 </form>
 
+                <!--For the circle calculation forms below, the user can either enter a decimal number or a whole number
+                    This is for the convenience for the user so they don't have to worry about including all the numbers beyond the decimal point in their answer.
+                Either way the number they give, alongside the correct answer will both be rounded to the nearest whole number with JavaScript's Math.round() function -->
+
+                <!--This form appears if the user wants to calculate the AREA of their circle
+                The user will enter what they think the area of their circle is based upon the radius they gave from the previous form-->
                 <form id="area_circle">
                     <h3>SO WHAT IS THE AREA OF THIS CIRCLE</h3>
                     <p>If you want, you can round your answer to the nearest whole number</p>
@@ -132,6 +162,9 @@
                     </label>
                     <input type="button" value="SUBMIT" onclick="areaCalcCircle()">
                 </form>
+
+                <!--This form appears if the user wants to calculate the CIRCUMFERENCE of their circle
+                The user will enter what they think the circumference of their circle is based upon the radius they gave from the previous form-->
                 <form id="circum_circle">
                     <h3>SO WHAT IS THE CIRCUMFERENCE OF THIS CIRCLE</h3>
                     <p>If you want, you can round your answer to the nearest whole number</p>
@@ -141,6 +174,9 @@
                     </label>
                     <input type="button" value="SUBMIT" onclick="circumferenceCalc()">
                 </form>
+
+                <!--This form appears if the user wants to calculate the DIAMETER of their circle
+                The user will enter what they think the diameter of their circle is based upon the radius they gave from the previous form-->                
                 <form id="diameter_circle">
                     <h3>SO WHAT IS THE DIAMETER OF THIS CIRCLE</h3>
                     <p>If you want, you can round your answer to the nearest whole number</p>

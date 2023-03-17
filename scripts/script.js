@@ -3,6 +3,26 @@ const valuePi = Math.PI;
 
 $('#circleDesc span').html(valuePi);
 
+/*FUNCTIONS ORDER STRUCTURE FOR TRIANGLE, PARALLELOGRAM AND TRAPEZIUM
+
+    1. Displaying the form for entering base(s) and height sizes (forms from other shapes in this category are hidden if already displayed)
+    2. First checks if the user has entered numbers for base(s) and height in the relevant form displayed
+        if yes then display the form where the user can enter what they think the area of their chosen shape is.
+        if no then produce an alert telling the user they must enter this information.
+
+    3. Picking up the user's answer, calculating the area of their chosen shape based upon the base(s) and height sizes the user gave and checking if the user is right.
+        i. For Triangle and Parallelogram it will first check which shape the user has chosen to calculate the area of before doing the calculation.
+        ii. It will then follow the method of how the area of the user's chosen shape is calculated
+        iii. Then using the answerCheck() function at the bottom it will check if the user's answer and the correct answer match returning an alert to tell if they were right or wrong.
+
+*/
+
+//FUNCTIONS INVOLVED IN CALCULATING THE AREA OF A TRIANGLE OR A PARALLELOGRAM
+
+/*the 'shape' parameter in the 'shapeChosen()' function has the id of the shape the user clicked on (see onclick=shapeChosen(this.id) in index.html)
+This is used for determining whether the user wants to calculate the area of a triangle or a parallelogram as both shapes require the same information
+the only difference is that both shapes have a slightly different way in how the area is calculated.*/
+
 function shapeChosen(shape){
     $('#area_tri_parallel').hide('3000');
     $('#firstTrapeziumForm').hide('3000');
@@ -30,6 +50,9 @@ function showAreaTriParallelForm(){
     }
 }
 
+
+//FUNCTIONS INVOLVED IN CALCULATING THE AREA OF A TRAPEZIUM
+
 function showFirstTrapeziumForm(){
     $('#triparallel').hide('3000');
     $('#area_tri_parallel').hide('3000');
@@ -54,6 +77,8 @@ function showAreaTrapeziumForm(){
         chances = 3;
     }
 }
+
+//FUNCTIONS ORDER STRUCTURE FOR CIRCLE
 
 function showCircleCalcChoice(){
     $('#area_circle').hide('3000');
@@ -167,6 +192,9 @@ function diameterCalculation(){
 
     $('#diameter_circle h3').html(diameter);
 }
+
+/*Function used in all calculation functions to check if the user's answer matches the correct answer.
+Having this function saves on having separate answer checking functions inside the different functions where calculations are performed*/
 
 function answerCheck(given, correct){
 
