@@ -50,6 +50,24 @@ function showAreaTriParallelForm(){
     }
 }
 
+function areaCalcTriParallel(){
+    let base = parseInt($('#base').val());
+    let height = parseInt($('#height').val());
+    let shape = $('#shape').val();
+
+    let givenAnswer = parseInt($('#areaCalc1').val());
+    let areaCalc = base * height;
+
+    if(shape == "triangle") {
+        let areaTriangle = areaCalc / 2;
+        $('#chosenShape').html(chances);
+        answerCheck(givenAnswer, areaTriangle);
+    }
+    else{
+        $('#chosenShape').html(chances);
+        answerCheck(givenAnswer, areaCalc);
+    }
+}
 
 //FUNCTIONS INVOLVED IN CALCULATING THE AREA OF A TRAPEZIUM
 
@@ -78,7 +96,34 @@ function showAreaTrapeziumForm(){
     }
 }
 
-//FUNCTIONS ORDER STRUCTURE FOR CIRCLE
+function areaCalcTrapezium(){
+    let topBase = parseInt($('#topbase').val());
+    let bottomBase = parseInt($('#bottombase').val());
+    let height = parseInt($('#heightTrapezium').val());
+
+    let givenAnswer = parseInt($('#areaCalc2').val());
+    let basesCalc = (topBase + bottomBase) / 2;
+    let areaCalc = basesCalc * height;
+
+    answerCheck(givenAnswer, areaCalc);
+
+    $('#forTrapezium').html(areaCalc);
+}
+
+/*FUNCTIONS ORDER STRUCTURE FOR CIRCLE
+
+    1. Displaying the form where the user can choose what they want to calculate on their circle (other forms related to the circle are hidden if already displayed)
+    2. Displays the form where the user can enter the radius of their circle (other forms related to the circle are hidden if already displayed)
+        The process of what the user wants to calculate on their circle is decided on point 3 this function only deals with making sure the user selected an option from point 1.
+    3. Based on what the user wants to calculate with their circle the next function will decide which form to display
+    4. The next 3 functions show the different calculations that can be performed on the circle. Each one will run based on what the user said they wanted to calculate on their circle
+
+        For each function in point 4
+        i. The function will pick up the user's answer on what they think the area/circumference/diameter of their circle is based on the radius they gave earlier.
+        ii. The function will then follow the process of calculating the area/circumference/diameter of a circle based on the radius the user gave earlier.
+        iii. Both the correct answer and the user's answer will be rounded to the nearest whole number, this process is included for the convenience of the user
+        iv. Then using the answerCheck() function at the bottom it will check if the user's answer and the correct answer match returning an alert to tell if they were right or wrong.
+*/
 
 function showCircleCalcChoice(){
     $('#area_circle').hide('3000');
@@ -128,39 +173,6 @@ function showChosenChoice(){
     }
 }
 
-function areaCalcTriParallel(){
-    let base = parseInt($('#base').val());
-    let height = parseInt($('#height').val());
-    let shape = $('#shape').val();
-
-    let givenAnswer = parseInt($('#areaCalc1').val());
-    let areaCalc = base * height;
-
-    if(shape == "triangle") {
-        let areaTriangle = areaCalc / 2;
-        $('#chosenShape').html(chances);
-        answerCheck(givenAnswer, areaTriangle);
-    }
-    else{
-        $('#chosenShape').html(chances);
-        answerCheck(givenAnswer, areaCalc);
-    }
-}
-
-function areaCalcTrapezium(){
-    let topBase = parseInt($('#topbase').val());
-    let bottomBase = parseInt($('#bottombase').val());
-    let height = parseInt($('#heightTrapezium').val());
-
-    let givenAnswer = parseInt($('#areaCalc2').val());
-    let basesCalc = (topBase + bottomBase) / 2;
-    let areaCalc = basesCalc * height;
-
-    answerCheck(givenAnswer, areaCalc);
-
-    $('#forTrapezium').html(areaCalc);
-}
-
 function areaCalcCircle(){
     let radius = parseInt($('#radius').val());
 
@@ -194,7 +206,7 @@ function diameterCalculation(){
 }
 
 /*Function used in all calculation functions to check if the user's answer matches the correct answer.
-Having this function saves on having separate answer checking functions inside the different functions where calculations are performed*/
+Having this function saves on having separate but similar answer checking processes inside the different functions where calculations are performed*/
 
 function answerCheck(given, correct){
 
