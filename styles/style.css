@@ -2,13 +2,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#example{
-    float: right;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-}
+/*Tags*/
 
 div{
     width: 100%;
@@ -36,15 +30,21 @@ p, label, input{
     font-size: 1.1em;
 }
 
-input[type="button"]{
-    background-color: greenyellow;
-}
-
 svg{
     margin-left: 50px;
     fill: red;
     stroke-width: 1px;
     stroke:black;
+}
+
+/*IDs*/
+
+#example{
+    float: right;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
 }
 
 #circleTitle{
@@ -53,6 +53,13 @@ svg{
     text-align: center;
 }
 
+/*Classes*/
 .bigQuestion{
     font-weight: bold;
+}
+
+/*Higher Specificity*/
+
+input[type="button"]{
+    background-color: greenyellow;
 }
