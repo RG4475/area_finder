@@ -15,6 +15,7 @@ $('#circleDesc span').html(valuePi);
         ii. It will then follow the method of how the area of the user's chosen shape is calculated
         iii. Then using the answerCheck() function at the bottom it will check if the user's answer and the correct answer match returning an alert to tell if they were right or wrong.
 
+    4. Displays a clue on how to calculate the area of the user's chosen shape, should the user need some help.
 */
 
 //FUNCTIONS INVOLVED IN CALCULATING THE AREA OF A TRIANGLE OR A PARALLELOGRAM
@@ -27,6 +28,7 @@ function shapeChosen(shape){
     $('#area_tri_parallel').hide('3000');
     $('#firstTrapeziumForm').hide('3000');
     $('#area_trapezium').hide('3000');
+    $('.clue').html("");
     $('#triparallel').show('3000');
     $('#shape').val(shape);
     $('#selectShape').html(shape.toUpperCase());
@@ -69,6 +71,19 @@ function areaCalcTriParallel(){
     }
 }
 
+function clueTriParallel(){
+
+    let shape = $('#shape').val();
+
+    if(shape == "triangle") {
+
+        $('#clueTriParallel').html("A Triangle is half a Rectangle.");
+    }
+    else{
+        $('#clueTriParallel').html("Whilst it might not look so, a Parallelogram is like a Rectangle.");
+    }
+}
+
 //FUNCTIONS INVOLVED IN CALCULATING THE AREA OF A TRAPEZIUM
 
 function showFirstTrapeziumForm(){
@@ -76,6 +91,7 @@ function showFirstTrapeziumForm(){
     $('#area_tri_parallel').hide('3000');
     $('#area_trapezium').hide('3000');
     $('#firstTrapeziumForm').show('3000');
+    $('.clue').html("");
 }
 
 function showAreaTrapeziumForm(){
@@ -108,6 +124,11 @@ function areaCalcTrapezium(){
     answerCheck(givenAnswer, areaCalc);
 
     $('#forTrapezium').html(areaCalc);
+}
+
+function clueTrapezium(){
+
+        $('#clueTrapezium').html("Add the bases together, then follow something similar with a Triangle, then multiply by something you input with your Trapezium");
 }
 
 /*FUNCTIONS ORDER STRUCTURE FOR CIRCLE
@@ -205,16 +226,25 @@ function diameterCalculation(){
     $('#diameter_circle h3').html(diameter);
 }
 
-/*Function used in all calculation functions to check if the user's answer matches the correct answer.
+/*Function used in all calculation functions to check if the user's answer matches the correct answer. 1 wrong answer loses a try, all 3 tries lost and its game over.
 Having this function saves on having separate but similar answer checking processes inside the different functions where calculations are performed*/
 
 function answerCheck(given, correct){
 
-    if(given == correct)
-    {
-        alert("You have answered correctly");
+    if(given == correct){
+        alert("You have answered correctly WELL DONE!");
     }
     else{
-        alert("You have answered incorrectly");
+
+        chances--;
+
+        if(chances == 0){
+            alert("You have run out of guesses GAME OVER!")   
+        }
+        else{
+            alert("You have answered incorrectly. You have " + chances + " chances left");
+        }
+        
     }
 }
+

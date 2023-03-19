@@ -1,8 +1,13 @@
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 
 /*Tags*/
+
+body{
+    background-color:aquamarine;
+}
 
 div{
     width: 100%;
@@ -53,13 +58,16 @@ svg{
     text-align: center;
 }
 
-/*Classes*/
-.bigQuestion{
+/*Higher Specificity and Styles applying to multiple specificities*/
+
+.bigQuestion, .clue{
     font-weight: bold;
 }
 
-/*Higher Specificity*/
-
 input[type="button"]{
     background-color: greenyellow;
+}
+
+input.clueButton{
+    background-color: lightblue;
 }
