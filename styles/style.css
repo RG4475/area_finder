@@ -60,7 +60,7 @@ svg{
 
 /*Higher Specificity and Styles applying to multiple specificities*/
 
-.bigQuestion, .clue{
+.bigQuestion, .clue, .circleClue, .answer, .circleAnswer{
     font-weight: bold;
 }
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="styles/mobile.css" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -19,7 +20,7 @@
         
         <!--Meaning of area and an example of how to calculate the area of a rectangle-->
         <section>
-            <h2>The area is everything that is inside the shape. Lets look at this rectangle for example.</h2>
+            <h2 id="whatsArea">The area is everything that is inside the shape. Lets look at this rectangle for example.</h2>
             <div id="example">
                 <aside>
                     <p>Rectangle not accurately drawn</p>
@@ -80,6 +81,7 @@
                     <input type="button" value="CLUE" class="clueButton" onclick="clueTriParallel()">
                 </form>
                     <p class="clue" id="clueTriParallel"></p>
+                    <p class="answer" id="answerTriParallel"></p>
 
                 <!--Form for the user to add base A, base B and the height of their Trapezium-->
                 <form id="firstTrapeziumForm">
@@ -110,6 +112,7 @@
                     <input type="button" value="CLUE" class="clueButton" onclick="clueTrapezium()">
                 </form>
                 <p class="clue" id="clueTrapezium"></p>
+                <p class="answer" id="answerTrapezium"></p>
             </section>
         </div>
 
@@ -158,37 +161,46 @@
                 The user will enter what they think the area of their circle is based upon the radius they gave from the previous form-->
                 <form id="area_circle">
                     <h3>SO WHAT IS THE AREA OF THIS CIRCLE</h3>
-                    <p>If you want, you can round your answer to the nearest whole number</p>
+                    <p>If you want, you can round your answer to the nearest whole number. The system will do this to your answer and the correct answer for checking if it is correct.</p>
                     <p class="radiusChosen"><b>Radius: </b><span></span>cm</p>
                     <label for="areaCalc3">Area (cm)
                         <input id="areaCalc3" name="areaCalc3" type="number" min="1">
                     </label>
                     <input type="button" value="SUBMIT" onclick="areaCalcCircle()">
+                    <input type="button" value="CLUE" class="clueButton" onclick="circleClueProvider()">
                 </form>
+                <p class="circleClue" id="clueArea"></p>
+                <p class="circleAnswer" id="answerArea"></p>
 
                 <!--This form appears if the user wants to calculate the CIRCUMFERENCE of their circle
                 The user will enter what they think the circumference of their circle is based upon the radius they gave from the previous form-->
                 <form id="circum_circle">
                     <h3>SO WHAT IS THE CIRCUMFERENCE OF THIS CIRCLE</h3>
-                    <p>If you want, you can round your answer to the nearest whole number</p>
+                    <p>If you want, you can round your answer to the nearest whole number. The system will do this to your answer and the correct answer for checking if it is correct.</p>
                     <p class="radiusChosen"><b>Radius: </b><span></span>cm</p>
                     <label for="circumCalc">Circumference (cm)
                         <input id="circumCalc" name="circumCalc" type="number" min="1">
                     </label>
                     <input type="button" value="SUBMIT" onclick="circumferenceCalc()">
+                    <input type="button" value="CLUE" class="clueButton" onclick="circleClueProvider()">
                 </form>
+                <p class="circleClue" id="clueCircumference"></p>
+                <p class="circleAnswer" id="answerCircumference"></p>
 
                 <!--This form appears if the user wants to calculate the DIAMETER of their circle
                 The user will enter what they think the diameter of their circle is based upon the radius they gave from the previous form-->                
                 <form id="diameter_circle">
                     <h3>SO WHAT IS THE DIAMETER OF THIS CIRCLE</h3>
-                    <p>If you want, you can round your answer to the nearest whole number</p>
+                    <p>If you want, you can round your answer to the nearest whole number. The system will do this to your answer and the correct answer for checking if it is correct.</p>
                     <p class="radiusChosen"><b>Radius: </b><span></span>cm</p>
                     <label for="diameterCalc">Diameter (cm)
                         <input id="diameterCalc" name="diameterCalc" type="number" min="1">
                     </label>
                     <input type="button" value="SUBMIT" onclick="diameterCalculation()">
+                    <input type="button" value="CLUE" class="clueButton" onclick="circleClueProvider()">
                 </form>
+                <p class="circleClue" id="clueDiameter"></p>
+                <p class="circleAnswer" id="answerDiameter"></p>
             </section>
         </div>
     </main>

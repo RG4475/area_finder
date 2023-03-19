@@ -28,7 +28,10 @@ function shapeChosen(shape){
     $('#area_tri_parallel').hide('3000');
     $('#firstTrapeziumForm').hide('3000');
     $('#area_trapezium').hide('3000');
+
     $('.clue').html("");
+    $('.answer').html("");
+
     $('#triparallel').show('3000');
     $('#shape').val(shape);
     $('#selectShape').html(shape.toUpperCase());
@@ -60,14 +63,24 @@ function areaCalcTriParallel(){
     let givenAnswer = parseInt($('#areaCalc1').val());
     let areaCalc = base * height;
 
+    let returned;
+
     if(shape == "triangle") {
         let areaTriangle = areaCalc / 2;
-        $('#chosenShape').html(chances);
-        answerCheck(givenAnswer, areaTriangle);
+        
+        returned = answerCheck(givenAnswer, areaTriangle);
+
+        if(returned == "Correct" || returned == "Game Over"){
+            $('#answerTriParallel').html("The correct answer is " + areaTriangle + "cm Area of Triangle = base * height / 2.")
+        }
     }
     else{
-        $('#chosenShape').html(chances);
-        answerCheck(givenAnswer, areaCalc);
+
+        returned = answerCheck(givenAnswer, areaCalc);
+
+        if(returned == "Correct" || returned == "Game Over"){
+            $('#answerTriParallel').html("The correct answer is " + areaCalc + "cm Area of Parallelogram = base * height.")
+        }
     }
 }
 
@@ -92,6 +105,7 @@ function showFirstTrapeziumForm(){
     $('#area_trapezium').hide('3000');
     $('#firstTrapeziumForm').show('3000');
     $('.clue').html("");
+    $('.answer').html("");
 }
 
 function showAreaTrapeziumForm(){
@@ -121,9 +135,11 @@ function areaCalcTrapezium(){
     let basesCalc = (topBase + bottomBase) / 2;
     let areaCalc = basesCalc * height;
 
-    answerCheck(givenAnswer, areaCalc);
+    let returned = answerCheck(givenAnswer, areaCalc);
 
-    $('#forTrapezium').html(areaCalc);
+    if(returned == "Correct" || returned == "Game Over"){
+        $('#answerTrapezium').html("The correct answer is " + areaCalc + "cm Area of Trapezium = a + b / 2 * height.")
+    }
 }
 
 function clueTrapezium(){
@@ -150,6 +166,10 @@ function showCircleCalcChoice(){
     $('#area_circle').hide('3000');
     $('#circum_circle').hide('3000');
     $('#diameter_circle').hide('3000');
+
+    $('.circleClue').html("");
+    $('.circleAnswer').html("");
+    
     $('#radius_input').hide('3000');
     $('#calc_choice').show('3000');
 }
@@ -179,6 +199,8 @@ function showChosenChoice(){
     $('#radius_input').hide('3000');
     $('.radiusChosen span').html(radius);
 
+    chances = 3;
+
     switch(pickUpChoice){
 
         case "area":
@@ -200,8 +222,11 @@ function areaCalcCircle(){
     let givenAnswer = Math.round($('#areaCalc3').val());
     let areaCalc = Math.round(valuePi * radius**2);
 
-    answerCheck(givenAnswer, areaCalc);
-    $('#area_circle h3').html(areaCalc);
+    let returned = answerCheck(givenAnswer, areaCalc);
+
+    if(returned == "Correct" || returned == "Game Over"){
+        $('#answerArea').html("The correct answer is " + areaCalc + "cm Area of Circle = Pi * radius<sup>2</sup>.");
+    }
 }
 
 function circumferenceCalc(){
@@ -210,9 +235,11 @@ function circumferenceCalc(){
     let givenAnswer = Math.round($('#circumCalc').val());
     let circumCalc = Math.round(2 * valuePi * radius);
 
-    answerCheck(givenAnswer, circumCalc);
+    let returned = answerCheck(givenAnswer, circumCalc);
 
-    $('#circum_circle h3').html(circumCalc);
+    if(returned == "Correct" || returned == "Game Over"){
+        $('#answerCircumference').html("The correct answer is " + circumCalc + "cm Circumference of Circle = 2 *  Pi * radius");
+    }
 }
 
 function diameterCalculation(){
@@ -221,9 +248,30 @@ function diameterCalculation(){
     let givenAnswer = parseInt($('#diameterCalc').val());
     let diameter = radius * 2;
 
-    answerCheck(givenAnswer, diameter);
+    let returned = answerCheck(givenAnswer, diameter);
 
-    $('#diameter_circle h3').html(diameter);
+    if(returned == "Correct" || returned == "Game Over"){
+        $('#answerDiameter').html("The correct answer is " + diameter + "cm Diameter of Circle = 2 * radius");
+    }
+}
+
+function circleClueProvider(){
+    let clueToShow = $('#calculation').val();
+
+    switch(clueToShow){
+
+        case "area":
+            $('#clueArea').html("Multiply something by radius squared");
+            break;
+
+        case "circumference":
+            $('#clueCircumference').html('2 * something * radius');
+            break;
+
+        default:
+            $('#clueDiameter').html('Radius doubled');
+    }
+    
 }
 
 /*Function used in all calculation functions to check if the user's answer matches the correct answer. 1 wrong answer loses a try, all 3 tries lost and its game over.
@@ -233,16 +281,19 @@ function answerCheck(given, correct){
 
     if(given == correct){
         alert("You have answered correctly WELL DONE!");
+        return "Correct";
     }
     else{
 
         chances--;
 
         if(chances == 0){
-            alert("You have run out of guesses GAME OVER!")   
+            alert("You have run out of guesses GAME OVER!")
+            return "Game Over";
         }
         else{
-            alert("You have answered incorrectly. You have " + chances + " chances left");
+            alert("You have answered incorrectly. You have " + chances + " chances left.");
+            return "Not Over";
         }
         
     }
