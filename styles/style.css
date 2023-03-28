@@ -58,6 +58,17 @@ svg{
     text-align: center;
 }
 
+#circleSection section{
+    float: left;
+    display: flex;
+    flex-direction: row;
+}
+
+#area_circle, #circum_circle, #diameter_circle{
+    margin-top: -10px;
+    line-height: 10px;
+}
+
 /*Higher Specificity and Styles applying to multiple specificities*/
 
 .bigQuestion, .clue, .circleClue, .answer, .circleAnswer{

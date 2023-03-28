@@ -118,11 +118,11 @@
 
         <!--SVG circle alongside mentioning the different things that can be calculated on a circle with the value of Pi-->
         <div id="circleSection">
-            <section>
+
                 <h2 id="circleTitle">CIRCLE</h2>
                 <h2 id="circleDesc">With the use of Pi &pi; (<span></span>) You can calculate more than just the area of a circle. You can also calculate its Diameter and Circumference</h2>
                 <h2 class="bigQuestion">DO YOU KNOW HOW TO CALCULATE THE AREA/CIRCUMFERENCE/DIAMETER OF A CIRCLE?</h2>
-
+            <section>
                 <svg width="200px" height="200px">
                     <circle cx="77" cy="77" r="75" onclick="showCircleCalcChoice()"></circle>
                 </svg>
@@ -168,9 +168,9 @@
                     </label>
                     <input type="button" value="SUBMIT" onclick="areaCalcCircle()">
                     <input type="button" value="CLUE" class="clueButton" onclick="circleClueProvider()">
+                    <p class="circleClue" id="clueArea"></p>
+                    <p class="circleAnswer" id="answerArea"></p>
                 </form>
-                <p class="circleClue" id="clueArea"></p>
-                <p class="circleAnswer" id="answerArea"></p>
 
                 <!--This form appears if the user wants to calculate the CIRCUMFERENCE of their circle
                 The user will enter what they think the circumference of their circle is based upon the radius they gave from the previous form-->
@@ -183,9 +183,9 @@
                     </label>
                     <input type="button" value="SUBMIT" onclick="circumferenceCalc()">
                     <input type="button" value="CLUE" class="clueButton" onclick="circleClueProvider()">
+                    <p class="circleClue" id="clueCircumference"></p>
+                    <p class="circleAnswer" id="answerCircumference"></p>
                 </form>
-                <p class="circleClue" id="clueCircumference"></p>
-                <p class="circleAnswer" id="answerCircumference"></p>
 
                 <!--This form appears if the user wants to calculate the DIAMETER of their circle
                 The user will enter what they think the diameter of their circle is based upon the radius they gave from the previous form-->                
@@ -198,9 +198,9 @@
                     </label>
                     <input type="button" value="SUBMIT" onclick="diameterCalculation()">
                     <input type="button" value="CLUE" class="clueButton" onclick="circleClueProvider()">
+                    <p class="circleClue" id="clueDiameter"></p>
+                    <p class="circleAnswer" id="answerDiameter"></p>
                 </form>
-                <p class="circleClue" id="clueDiameter"></p>
-                <p class="circleAnswer" id="answerDiameter"></p>
             </section>
         </div>
     </main>
