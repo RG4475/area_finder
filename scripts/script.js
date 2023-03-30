@@ -221,11 +221,12 @@ function areaCalcCircle(){
 
     let givenAnswer = Math.round($('#areaCalc3').val());
     let areaCalc = Math.round(valuePi * radius**2);
+    let areaCalcNoRound = valuePi * radius**2;
 
     let returned = answerCheck(givenAnswer, areaCalc);
 
     if(returned == "Correct" || returned == "Game Over"){
-        $('#answerArea').html("The correct answer is " + areaCalc + "cm Area of Circle = Pi * radius<sup>2</sup>.");
+        $('#answerArea').html("The correct answer is " + areaCalc + "cm (" + areaCalcNoRound + ") Area of Circle = Pi * radius<sup>2</sup>.");
     }
 }
 
@@ -234,11 +235,12 @@ function circumferenceCalc(){
 
     let givenAnswer = Math.round($('#circumCalc').val());
     let circumCalc = Math.round(2 * valuePi * radius);
+    let circumCalcNoRound = 2 * valuePi * radius;
 
     let returned = answerCheck(givenAnswer, circumCalc);
 
     if(returned == "Correct" || returned == "Game Over"){
-        $('#answerCircumference').html("The correct answer is " + circumCalc + "cm Circumference of Circle = 2 *  Pi * radius");
+        $('#answerCircumference').html("The correct answer is " + circumCalc + "cm (" + circumCalcNoRound + ")  Circumference of Circle = 2 *  Pi * radius");
     }
 }
 

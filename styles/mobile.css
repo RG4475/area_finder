@@ -2,6 +2,10 @@
     div, #whatsArea{
         width: 105%;
     }
+
+    nav, .scrollToTop{
+        display: block;
+    }
 }
 
 @media screen and (max-width: 802px){
@@ -11,32 +15,72 @@
 }
 
 @media screen and (max-width: 718px){
-    div, #whatsArea{
-        width: 120%;
+    div, #whatsArea, nav{
+        width: 125%;
     }
 }
 
 @media screen and (max-width: 659px){
-    div, #whatsArea{
-        width: 130%;
-    }
-}
-
-@media screen and (max-width: 611px){
-    div, #whatsArea{
+    div, #whatsArea, nav{
         width: 135%;
     }
 }
 
-@media screen and (max-width: 589px){
-    div, #whatsArea, h1{
+@media screen and (max-width: 611px){
+    div, #whatsArea, nav{
         width: 140%;
     }
 }
 
+@media screen and (max-width: 589px){
+    div, #whatsArea, h1, nav{
+        width: 150%;
+    }
+}
+
+@media screen and (max-width: 529px){
+    div, #whatsArea, h1, nav{
+        width: 160%;
+    }
+}
+
+@media screen and (max-width: 493px){
+    div, #whatsArea, h1, nav{
+        width: 170%;
+    }
+}
+
+@media screen and (max-width: 470px){
+    div, #whatsArea, h1, nav{
+        width: 180%;
+    }
+}
+
+@media screen and (max-width: 446px){
+    div, #whatsArea, h1, nav{
+        width: 187%;
+    }
+}
+
 @media screen and (max-width: 425px){
-    div, #whatsArea{
-        width: 200%;
+    div, #whatsArea, nav{
+        width: 195%;
+    }
+
+    .scrollToTop{
+        float: left;
+    }
+}
+
+@media screen and (max-width: 408px){
+    div, #whatsArea, h1, nav{
+        width: 210%;
+    }
+}
+
+@media screen and (max-width: 393px){
+    div, #whatsArea, h1, nav{
+        width: 220%;
     }
 }
 
@@ -48,6 +92,6 @@
 
 @media screen and (max-width: 320px){
     div, #whatsArea{
-        width: 260%;
+        width: 220%;
     }
 }
