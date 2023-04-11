@@ -98,3 +98,7 @@ input[type="button"]{
 input.clueButton{
     background-color: lightblue;
 }
+
+#radius_input{
+    margin-left: 50px;
+}

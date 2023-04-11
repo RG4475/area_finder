@@ -45,7 +45,7 @@ function showAreaTriParallelForm(){
     let shape = $('#shape').val();
 
     if(!base || !height){
-        alert("Please enter the base and height of your " + shape);
+        alert(`Please enter the base and height of your ${shape}`);
     }
     else{
         $('#triparallel').hide('3000');
@@ -71,7 +71,7 @@ function areaCalcTriParallel(){
         returned = answerCheck(givenAnswer, areaTriangle);
 
         if(returned == "Correct" || returned == "Game Over"){
-            $('#answerTriParallel').html("The correct answer is " + areaTriangle + "cm Area of Triangle = base * height / 2.")
+            $('#answerTriParallel').html(`The correct answer is ${areaTriangle} cm Area of Triangle = base * height / 2.`);
         }
     }
     else{
@@ -79,7 +79,7 @@ function areaCalcTriParallel(){
         returned = answerCheck(givenAnswer, areaCalc);
 
         if(returned == "Correct" || returned == "Game Over"){
-            $('#answerTriParallel').html("The correct answer is " + areaCalc + "cm Area of Parallelogram = base * height.")
+            $('#answerTriParallel').html(`The correct answer is  ${areaCalc} cm Area of Parallelogram = base * height.`);
         }
     }
 }
@@ -138,7 +138,7 @@ function areaCalcTrapezium(){
     let returned = answerCheck(givenAnswer, areaCalc);
 
     if(returned == "Correct" || returned == "Game Over"){
-        $('#answerTrapezium').html("The correct answer is " + areaCalc + "cm Area of Trapezium = a + b / 2 * height.")
+        $('#answerTrapezium').html(`The correct answer is ${areaCalc} cm Area of Trapezium = a + b / 2 * height.`);
     }
 }
 
@@ -160,6 +160,7 @@ function clueTrapezium(){
         ii. The function will then follow the process of calculating the area/circumference/diameter of a circle based on the radius the user gave earlier.
         iii. Both the correct answer and the user's answer will be rounded to the nearest whole number, this process is included for the convenience of the user
         iv. Then using the answerCheck() function at the bottom it will check if the user's answer and the correct answer match returning an alert to tell if they were right or wrong.
+    5. Displays a clue based on what the user said they want to calculate on their circle, should the user need some help.
 */
 
 function showCircleCalcChoice(){
@@ -226,7 +227,7 @@ function areaCalcCircle(){
     let returned = answerCheck(givenAnswer, areaCalc);
 
     if(returned == "Correct" || returned == "Game Over"){
-        $('#answerArea').html("The correct answer is " + areaCalc + "cm (" + areaCalcNoRound + ") Area of Circle = Pi * radius<sup>2</sup>.");
+        $('#answerArea').html(`The correct answer is ${areaCalc}cm (${areaCalcNoRound}) Area of Circle = Pi * radius<sup>2</sup>.`);
     }
 }
 
@@ -240,7 +241,7 @@ function circumferenceCalc(){
     let returned = answerCheck(givenAnswer, circumCalc);
 
     if(returned == "Correct" || returned == "Game Over"){
-        $('#answerCircumference').html("The correct answer is " + circumCalc + "cm (" + circumCalcNoRound + ")  Circumference of Circle = 2 *  Pi * radius");
+        $('#answerCircumference').html(`The correct answer is ${circumCalc}cm (${circumCalcNoRound}) Circumference of Circle = 2 *  Pi * radius`);
     }
 }
 
@@ -253,7 +254,7 @@ function diameterCalculation(){
     let returned = answerCheck(givenAnswer, diameter);
 
     if(returned == "Correct" || returned == "Game Over"){
-        $('#answerDiameter').html("The correct answer is " + diameter + "cm Diameter of Circle = 2 * radius");
+        $('#answerDiameter').html(`The correct answer is ${diameter}cm Diameter of Circle = 2 * radius`);
     }
 }
 
@@ -294,7 +295,7 @@ function answerCheck(given, correct){
             return "Game Over";
         }
         else{
-            alert("You have answered incorrectly. You have " + chances + " chances left.");
+            alert(`You have answered incorrectly. You have ${chances} chances left.`);
             return "Not Over";
         }
         
