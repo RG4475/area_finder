@@ -196,25 +196,33 @@ function showChosenChoice(){
 
     let radius = parseInt($('#radius').val());
 
-    $('#calc_choice').hide('3000');
-    $('#radius_input').hide('3000');
-    $('.radiusChosen span').html(radius);
+    if(radius){
 
-    chances = 3;
-
-    switch(pickUpChoice){
-
-        case "area":
-            $('#area_circle').show('3000');
-            break;
-
-        case "circumference":
-            $('#circum_circle').show('3000');
-            break;
-
-        default:
-            $('#diameter_circle').show('3000');
+        $('#calc_choice').hide('3000');
+        $('#radius_input').hide('3000');
+        $('.radiusChosen span').html(radius);
+    
+        chances = 3;
+    
+        switch(pickUpChoice){
+    
+            case "area":
+                $('#area_circle').show('3000');
+                break;
+    
+            case "circumference":
+                $('#circum_circle').show('3000');
+                break;
+    
+            default:
+                $('#diameter_circle').show('3000');
+        }
     }
+    else{
+        alert(`Please enter the radius of your circle so you can calculate its ${pickUpChoice}`)
+    }
+
+
 }
 
 function areaCalcCircle(){
